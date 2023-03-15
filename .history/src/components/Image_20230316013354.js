@@ -17,7 +17,7 @@ function Image({ className, img }) {
             return (<i className="ri-heart-fill favourite" onClick={() => toggleEffect(img.id)}></i>)
         }
         else{
-            return (hovered && <i className="ri-heart-line favourite" onClick={() => toggleEffect(img.id)}></i>)
+            return (<i className="ri-heart-line favourite" onClick={() => toggleEffect(img.id)}></i>)
         }
     }
     return (
