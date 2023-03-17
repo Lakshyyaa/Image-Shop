@@ -31,7 +31,7 @@ function Image({ className, img }) {
         }
     }
     return (
-        <div ref={ref} className={`image-container`} >
+        <div onMouseEnter={()=>enter()} onMouseLeave={()=>leave()} className={`image-container`} >
             <img src={img.url} alt={'lol'} className="image-grid" />
             {showplus()}
             {showheart()}

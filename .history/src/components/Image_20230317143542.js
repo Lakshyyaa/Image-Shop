@@ -3,15 +3,15 @@ import { Context } from "../Context";
 import PropTypes from 'prop-types';
 import useHook from "../hooks/useHook";
 function Image({ className, img }) {
-    // const [hovered, setHovered] = useState(false)
-    // const enter = () => {
-    //     setHovered(true)
+    const [hovered, setHovered] = useState(false)
+    const enter = () => {
+        setHovered(true)
 
-    // }
-    // const leave = () => {
-    //     setHovered(false);
+    }
+    const leave = () => {
+        setHovered(false);
 
-    // }
+    }
     const [hovered, ref] = useHook()
     const { toggleEffect, addToCart, cartItems } = useContext(Context)
     function showplus() {
@@ -31,7 +31,7 @@ function Image({ className, img }) {
         }
     }
     return (
-        <div ref={ref} className={`image-container`} >
+        <div onMouseEnter={()=>enter()} onMouseLeave={()=>leave()} className={`image-container`} >
             <img src={img.url} alt={'lol'} className="image-grid" />
             {showplus()}
             {showheart()}

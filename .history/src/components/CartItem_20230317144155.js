@@ -5,7 +5,7 @@ import useHook from "../hooks/useHook";
 function CartItem({ item }) {
     const { removeFromCart } = useContext(Context);
     // const [hovered, setHovered] = useState(false)
-    const [hovered, ref] = useHook()
+    const [hovered, ref]=useHook()
     function trashicon() {
         if (hovered) {
             return ("ri-delete-bin-fill")
@@ -16,7 +16,7 @@ function CartItem({ item }) {
     }
     return (
         <div className="cart-item">
-            <i className={trashicon()} onClick={() => removeFromCart(item)} ref={ref}></i>
+            <i className={trashicon()} onClick={() => removeFromCart(item)} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}></i>
             <img src={item.url} alt='s' width='130px' />
             <p>$5.99</p>
         </div>

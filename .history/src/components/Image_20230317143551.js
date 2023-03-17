@@ -12,7 +12,7 @@ function Image({ className, img }) {
     //     setHovered(false);
 
     // }
-    const [hovered, ref] = useHook()
+    // // const [hovered, ref] = useHook()
     const { toggleEffect, addToCart, cartItems } = useContext(Context)
     function showplus() {
         if ((cartItems.some(item => item.id === img.id))) {
@@ -31,7 +31,7 @@ function Image({ className, img }) {
         }
     }
     return (
-        <div ref={ref} className={`image-container`} >
+        <div onMouseEnter={()=>enter()} onMouseLeave={()=>leave()} className={`image-container`} >
             <img src={img.url} alt={'lol'} className="image-grid" />
             {showplus()}
             {showheart()}

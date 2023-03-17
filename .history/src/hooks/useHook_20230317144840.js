@@ -14,8 +14,8 @@ function useHook() {
         return () => {
             if(ref.current){
                 ref.current.removeEventListener('mouseenter', enter)
-                ref.current.removeEventListener('mouseleave', leave)
             }
+    
         }
     }, [])
     return [hovered, ref];
