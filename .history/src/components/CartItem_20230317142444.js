@@ -16,7 +16,7 @@ function CartItem({ item }) {
     }
     return (
         <div className="cart-item">
-            <i className={trashicon()} onClick={() => removeFromCart(item)} onMouseEnter={()=>setHovered(true)} onMouseLeave={()=>setHovered(false)}></i>
+            <i className={trashicon()} onClick={() => removeFromCart(item)} onMouseEnter=></i>
             <img src={item.url} alt='s' width='130px' />
             <p>$5.99</p>
         </div>

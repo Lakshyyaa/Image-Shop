@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { Context } from "../Context";
 import PropTypes from 'prop-types';
 import useHook from "../hooks/useHook";
@@ -31,7 +31,7 @@ function Image({ className, img }) {
         }
     }
     return (
-        <div onMouseEnter={()=>enter()} onMouseLeave={()=>leave()} className={`image-container`} >
+        <div ref={ref} className={`image-container`} >
             <img src={img.url} alt={'lol'} className="image-grid" />
             {showplus()}
             {showheart()}
